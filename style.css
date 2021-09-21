@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav{
+    height: 80px;
+    background: #1b1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
+  }
+
+  nav .logo{
+    font-size: 33px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  nav ul{
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul a{
+    margin: 0 5px;
+  }
+
+  nav ul a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  nav ul a:hover,
+  nav ul a.active{
+    color: #1b1b1b;
+    background: #fff;
+  }
+
+  nav .menu-btn{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
+  #click{
+    display: none;
+  }
+
+
+  /**media***/
+  @media (max-width: 940px){
+     
+    nav .menu-btn{
+      display: block;
+    }
+
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+
+    nav ul{
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      background: #111;
+      height: 100vh;
+      width: 100%;
+      display: block;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    #click:checked ~ ul{
+      left: 0%;
+    }
+  
+    nav ul a{
+      margin: 40px 0;
+    }
+
+    nav ul a{
+      font-size: 20px;
+      display: block;
+    }
+
+    nav ul a:hover,
+    nav ul a.active{
+    color: cyan;
+    background: none;
+    }
+
+  }
+
+  body {
+    background-image: url('images/paint.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+ .image{
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+   overflow: hidden;
+ }
+
+  section .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(./wave.png);
+    background-size: 1000px 100px;
+  }
+  
+  section .wave.wave0 {
+    animation: animate 5s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0.3s;
+    bottom: 10;
+    -webkit-animation: animate 30s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+  
+  section .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+    -webkit-animation: animate2 15s linear infinite;
+  }
+  
+  @keyframes animate2 {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+  
+  section .wave.wave3 {
+    animation: animate3 5s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -3s;
+    bottom: 15px;
+    -webkit-animation: animate3 5s linear infinite;
+  }
+  
+  @keyframes animate3 {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+  
+  section .wave.wave4 {
+    animation: animate4 15s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+    -webkit-animation: animate4 6s linear infinite;
+  }
+  
+  @keyframes animate4 {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+   
+  .donate{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+  }
+
+  .outer{
+    position: relative;
+    margin: 0 50px;
+  }
+
+  .button{
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+  }
+
+  .outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .outer button{
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    z-index: 9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+  }
+
+  .button button{
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+  }
+
+
+  .outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+
+  }
+
+  .button span{
+    border-radius: 50px;
+
+  }
+
+
+  .outer:hover span:nth-child(1){
+    filter: blur(7px);
+  }
+
+  .outer:hover span:nth-child(2){
+    filter: blur(14px);
+  }
+
+  .outer:hover{
+    animation: rotate 1.5s linear infinite;
+    background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+  }
+
+
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+    
+  }
+
+  @media (max-width:640px) {
+
+    .outer{
+      margin: 50px 0px;
+
+    }
+    
+  }
+
+  body{
+	font-family: 'Baloo 2', sans-serif !important;
+  }
+
+.banner-text {
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.banner-text h2{
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	margin-top: 5%;
+}
+
+.banner-text h4{
+  text-align: center;
+	color: #fff;
+	font-size: 20px;
+	margin-top: 1%;
+
+}
+
+h3,h1,p{
+  color: white;
+}
+
+.contact-section{
+  background: linear-gradient(#0cbaba,#380036)!important;
+  background: linear-gradient(#e950d7,#6cc4e7,#deec5b);
+  background-size: cover;
+  padding: 40px 0;
+}
+
+.contact-section h1{
+  text-align: center;
+  color: #ddd;
+  font-size: 40px;
+}
+
+.contact-form{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+
+}
+
+.contact-form-text{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #111;
+  padding: 20px 40px;
+  outline: none;
+  color: #ddd;
+  transition: 0.5s;
+
+}
+
+
+.contact-form-text:focus{
+  box-shadow: 0 0 10px 4px #82ec08;
+
+}
+
+textarea.contact-form-text{
+  resize: none;
+  height: 120px;
+}
+
+.contact-form-btn{
+  float: right;
+  border: 0;
+  background: black;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.contact-form-btn:hover{
+  background: #74e0f3;
+}
+
+#about{
+  background: linear-gradient(#0cbaba,#380036)!important;
+  background-size: cover;
+  padding: 19px 0;
+}
+
